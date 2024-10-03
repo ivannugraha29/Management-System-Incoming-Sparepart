@@ -1,0 +1,22 @@
+<!-- gudang.html -->
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>Warehouse - Spare Parts</h2>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Vendor</th>
+        <th>Entry Date</th>
+    </tr>
+    {% for part in spareparts %}
+    <tr>
+        <td>{{ part.name }}</td>
+        <td>{{ part.quantity }}</td>
+        <td>{{ part.vendor }}</td>
+        <td>{{ part.entry_date }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

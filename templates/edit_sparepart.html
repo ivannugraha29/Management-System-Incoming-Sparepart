@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Edit Spare Part</h1>
+<form method="POST" action="{{ url_for('edit_sparepart', part_id=part_id) }}">
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" value="{{ sparepart['name'] }}" required>
+    
+    <label for="quantity">Quantity:</label>
+    <input type="number" name="quantity" id="quantity" value="{{ sparepart['quantity'] }}" required>
+    
+    <label for="vendor">Vendor:</label>
+    <input type="text" name="vendor" id="vendor" value="{{ sparepart['vendor'] }}" required>
+    
+    <label for="entry_date">Entry Date:</label>
+    <input type="date" name="entry_date" id="entry_date" value="{{ sparepart['entry_date'] }}" required>
+    
+    <button type="submit">Update</button>
+</form>
+
+{% endblock %}

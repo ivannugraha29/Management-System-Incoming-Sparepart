@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('vendor_dashboard') }}">Dashboard</a>
+        <a href="{{ url_for('vendor_send_sparepart') }}">Send Spare Part</a>
+        <a href="{{ url_for('vendor_spareparts_sent') }}">View Sent Spare Parts</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </nav>
+    
+    <div class="container">
+        <h1>Vendor Sparepart</h1>
+            <style>
+                body {
+                    background-image: url('https://www.hashmicro.com/id/blog/wp-content/uploads/2022/09/cover-1.png');
+                    background-size: cover; /* Make the image cover the entire background */
+                    background-repeat: no-repeat; /* Prevent the image from repeating */
+                    h1 {
+	                color: rgb(255, 255, 255);
+                    }
+                }
+            </style>
+    
+</body>
+</html>

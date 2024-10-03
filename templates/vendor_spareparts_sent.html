@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spare Parts Sent</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h1>Spare Parts Sent</h1>
+        
+        <a href="{{ url_for('vendor_dashboard') }}" class="btn btn-secondary">Back to Dashboard</a>
+
+        {% if spareparts %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Quantity</th>
+                        <th>Vendor</th>
+                        <th>Entry Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for part in spareparts %}
+                    <tr>
+                        <td>{{ part.name }}</td>
+                        <td>{{ part.quantity }}</td>
+                        <td>{{ part.vendor }}</td>
+                        <td>{{ part.entry_date }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No spare parts have been sent yet.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
